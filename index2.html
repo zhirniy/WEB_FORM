@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+	<html lang="ru">
+	<head>
+		<title>Создание списка дел (To-Do лист) средствами jQuery и Web SQL Database | XoZblog</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/redmond/jquery-ui.css" type="text/css">
+        <link rel="stylesheet" href="css/header.css" type="text/css">
+        <script>
+        	window.onload = function(){
+
+        	function init() {
+           if(typeof(openDatabase) !== 'undefined')
+           {
+           	var text;
+           	var speckyboy = {};
+	        
+            speckyboy = openDatabase("den","1.0","Моя БД", 1024*1024*1);
+
+            speckyboy.transaction(function(tx){
+			tx.executeSql("CREATE TABLE IF NOT EXISTS user (ID INTEGER PRIMARY KEY ASC,todo_item TEXT,due_date VARCHAR)", []);
+		           
+			});	
+            
+            speckyboy.transaction(function(tx){
+			 tx.executeSql("INSERT INTO user (todo_item,due_date) VALUES (?,?)", ["50","10"]);
+			
+		   });
+
+
+           // text = "123";
+
+            speckyboy.transaction(function(tx){
+			tx.executeSql("SELECT * FROM user", [], function(tx,result){
+				    
+				for (var i=0; i < result.rows.length; i++) {
+					if(result.rows.item(i).ID !== 1){
+					text += result.rows.item(i).ID;}
+					else{
+					text = 1;	
+					}
+					text += result.rows.item(i).todo_item;
+					text += result.rows.item(i).due_date;
+					//text += result.rows.item(i).ID;
+					text +="<br>";
+					document.getElementById("div").innerHTML = text;
+					//showAllTodo(todo_item,todo_due_date,todo_id);
+				}
+			});
+			});
+
+           // document.getElementById("div").innerHTML = text;
+
+           } else  {
+            document.getElementById("div").innerHTML = "Не поддерживается"; 
+           }
+}
+// Вызываем эту функцию
+init();
+        	};
+        </script>
+		</head>
+	<body>
+	<div id="div">
+		1111
+	</div>	
+	</body>
+	</html>

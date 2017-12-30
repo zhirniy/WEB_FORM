@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+	<html lang="ru">
+	<head>
+		<title>Создание списка дел (To-Do лист) средствами jQuery и Web SQL Database | XoZblog</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/redmond/jquery-ui.css" type="text/css">
+        <link rel="stylesheet" href="css/header.css" type="text/css">
+		<script type="text/javascript" src="js/manageTodo.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+		<header>
+    	<p>To-Do лист с помощью jQuery и Web SQL Database <a href="http://xozblog.ru/2012/10/to-do-list/" class="stuts">Перейти к статье на<span>XoZblog.ru</span></a></p>
+    	</header>
+
+
+			<div id="bodyWrapper">
+				<div id="todo_wrapper" class="white_bg">
+					<h2>Список дел</h2>
+					<ul class="list">
+					</ul>
+				</div><!-- end todo_wrapper -->
+
+				<div id="todo_form" class="white_bg">
+					<div id="form_wrapper">
+						<textarea id="todo_item_text" placeholder="Что нужно сделать..."></textarea>
+						<input type="text" id="todo_due_date" placeholder="Установить дату..." />
+					</div><!-- end form_wrapper -->
+
+					<input type="submit" id="create_todo" value="Добавить" class="button"/>
+				</div><!-- end todo_form -->
+			</div><!-- end bodyWrapper -->
+		</div><!-- end wrapper -->
+	</body>
+	</html>

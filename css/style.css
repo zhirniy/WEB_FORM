@@ -1,0 +1,150 @@
+/*
+	 /////////  General Styling Rules On Body and Other Page Elements ///////////////
+*/
+body{
+	background: #f7f7f7;
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size: 12px;
+	color: #3a3a3a;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+ul, ol{
+	list-style: none outside none;
+}
+.clear{
+	clear: both;
+}
+/*
+	//////////////   Main Body Div Styles Including List Of Created Todo ///////////////
+
+*/
+
+/*  Body wrapper holding all page elements except header */
+#bodyWrapper{
+	width: 500px;
+	margin: auto;
+	padding-top: 120px;
+}
+
+/* todo div and all todo inside a list */
+.white_bg{
+	background: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-bottom: 20px;
+}
+#todo_wrapper h2{
+	color: #555;
+	border-bottom: 1px dotted #999;
+	margin-bottom: 30px;
+	padding-bottom: 10px;
+}
+#todo_wrapper ul li{
+	border-bottom: 1px solid
+	#E8E8E8;
+	font-size: 11px;
+	margin: 0;
+	padding: 4px;
+	padding-left: 0px;
+	padding-bottom: 3px;
+	padding-top: 5px;
+}
+#todo_wrapper ul li .todo_text{
+	float: left;
+	padding: 3px;
+}
+#todo_wrapper ul li .due_date{
+	background: none repeat scroll 0 0 #FFD5E3;
+	border: 1px solid #FCB7CE;
+	float: right;
+	padding: 1px 8px 1px 6px;
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+#form_wrapper{
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	box-shadow: 1px 1px 13px #EEEEEE;
+	-webkit-box-shadow: 1px 1px 13px #EEEEEE;
+	-moz-box-shadow: 1px 1px 13px #EEEEEE;
+}
+#todo_form textarea{
+	border: 0px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	width: 98%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 15px;
+	height: 15px;
+	display: block;
+	min-height: 50px;
+	background-color:transparent;
+	resize: none;
+	overflow-y: scroll;
+	padding: 5px;
+}
+#todo_form input[type="text"]{
+	border: 0px solid #ccc;
+	width: 95%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	display: block;
+	background-color:transparent;
+	padding: 5px;
+}
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+	background-color:#79bbff;
+	-moz-border-radius:26px;
+	-webkit-border-radius:26px;
+	border-radius:26px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:4px 12px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528ecc;
+	margin-top: 20px;
+	cursor: pointer;
+}.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+	background-color:#378de5;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+.highlight{
+	background: yellow;
+}
+#delete{
+	float: right;
+	margin-left: 10px;
+	margin-top: 3px;
+}
+.error_message{
+	padding-top: 50px;
+	color: #888;
+	font-size: 80px;
+	text-align: center;
+}
